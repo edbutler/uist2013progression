@@ -12,5 +12,5 @@ Requirements:
 - python and all the packages listed in `requirements.txt`.
 - gringo and the disjunctive version of clasp (claspD), somewhere on the path. You can download them here, but you might have to build claspD from source: http://potassco.sourceforge.net/index.html
 
-With those in hand, `cd html/` and run `python main.py` to launch a web server on port 5000. Navigate to [http://localhost:5000/editor/refraction]() to start the tool.
+With those in hand, `cd html/` and run `python main.py` to launch a web server on port 5000. Navigate to [http://localhost:5000/editor/refraction](http://localhost:5000/editor/refraction) to start the tool.
 
