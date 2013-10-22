@@ -1,0 +1,17 @@
+
+<div class="button_row">
+	<button class="btn" ng-click="launch_game()" ng-disabled="!all_levels_generated()">Play Game</button>
+</div>
+<div class="button_row">
+	<button class="btn" ng-click="edit_level()" ng-disabled="!levels[curr_view_lid.value]">Edit Current Level</button>
+	<button class="btn" ng-click="save_level()" ng-disabled="!is_editing">Save Level</button>
+</div>
+<div class="button_row">
+	<button class="btn" ng-disabled="curr_view_lid.value == 0 || levels.length == 0" ng-click="display_level(curr_view_lid.value - 1)">&laquo;</button>
+	<span class="btn-group" data-toggle="buttons-checkbox">
+		<button class="btn" ng-repeat="idx in lids()" ng-disabled="!levels[idx]" ng-click="display_level(idx)" ng-model="curr_view_lid.value" btn-radio="idx">{{idx}}</button>
+	</span>
+	<button class="btn" ng-disabled="curr_view_lid.value == levels.length - 1 || levels.length == 0" ng-click="display_level(curr_view_lid.value + 1)">&raquo;</button>
+</div>
+<div id="game_viewer_content"></div>
+

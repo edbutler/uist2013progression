@@ -1,0 +1,16 @@
+
+{% macro local_js(url) -%}
+	<script type="text/javascript" src="static/js/{{ url }}"></script>
+{%- endmacro %}
+
+{% macro local_lib(url) -%}
+	<script type="text/javascript" src="static/lib/{{ url }}"></script>
+{%- endmacro %}
+
+{% macro extern_js(url) -%}
+	<script type="text/javascript" src="{{ url }}"></script>
+{%- endmacro %}
+
+{% macro local_css(url) -%}
+	<link type="text/css" rel="stylesheet" href="static/css/{{ url }}"/>
+{%- endmacro %}

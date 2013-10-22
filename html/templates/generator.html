@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="saffron.app">
+	<head>
+		<meta charset="UTF-8">
+		<title>Game Progression Authoring Tool</title>
+		<link type="text/css" rel="stylesheet" href="/static/lib/bootstrap-combined.min.css"/>
+		<link type="text/css" rel="stylesheet" href="/static/css/saffron.css"/>
+		<script type="text/javascript" src="/static/lib/d3.v2.js"></script>
+		<script type="text/javascript" src="/static/lib/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="/static/lib/angular.js"></script>
+		<script type="text/javascript" src="/static/lib/ui-bootstrap-tpls-0.2.0.js"></script>
+		<script type="text/javascript" src="/static/lib/sylvester.js"></script>
+		<script type="text/javascript" src="/static/js/saffron.js"></script>
+		<script type="text/javascript" src="/static/js/functional.js"></script>
+		<script type="text/javascript" src="/static/js/math.js"></script>
+		<script type="text/javascript" src="/static/js/model.js"></script>
+		<script type="text/javascript" src="/static/js/app.generator.js"></script>
+		{% for url in game.jsincludes -%}
+		<script type="text/javascript" src="/static/{{url}}"></script>
+		{%- endfor %}
+		<script type="text/javascript">
+			var saffron_gname = "{{game.id}}";
+			var saffron_app = {{game.jsapp}};
+		</script>
+	</head>	
+	{% raw %}
+	<body ng-controller="ProgressionCtrl">
+		<p>Concepts:</p>
+		<p ng-repeat="c in concepts.concepts()">
+			<input type="checkbox" ng-model="used_concepts[c.id]">
+			<span>{{c.name}}</span>
+		</p>
+		<button class="btn" ng-click="generate_level()">Generate Level</button>
+		<div id="game_viewer_content"></div>
+	</body>
+	{% endraw %}	
+</html>

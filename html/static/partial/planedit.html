@@ -1,0 +1,22 @@
+
+<div>
+	<span>
+		<button class="btn" ng-click="generate_progression()" ng-disabled="!is_generate_progression_available">Generate New Progression</button>
+	</span>
+	<span class="saffron_ui_prefix_label">Tool:</span>
+	<span class="btn-group" data-toggle="buttons-checkbox">
+		<button class="btn" ng-model="drawtool" btn-radio="drawtool_options[0]">Draw</button>
+		<button class="btn" ng-model="drawtool" btn-radio="drawtool_options[1]">Erase</button>
+	</span>
+	<span>
+		<button class="btn" ng-click="generate_game()">Generate New Game</button>
+	</span>
+</div>
+<p>Draw on the grid to {{ drawtool.verb }} concepts to stages.</p>
+<div style="padding-left: 130px;">
+	<button ng-class="{true:'btn btn-primary', false:'btn'}[level_lock_button_text(lid) == 'U']" style="{{'width: {0}px;'.format(grid_col_width())}}" ng-repeat="lid in lids()" ng-click="toggle_lock(lid)">
+		{{ level_lock_button_text(lid) }}
+	</button>
+</div>
+<svg progression-editor></svg>
+

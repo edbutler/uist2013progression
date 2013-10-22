@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="saffron.app">
+	<head>
+		<meta charset="UTF-8">
+		<title>Game Progression Authoring Tool</title>
+		<link type="text/css" rel="stylesheet" href="/static/lib/bootstrap-combined.min.css"/>
+		<link type="text/css" rel="stylesheet" href="/static/css/saffron.css"/>
+		<script type="text/javascript" src="/static/lib/d3.v2.js"></script>
+		<script type="text/javascript" src="/static/lib/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="/static/lib/angular.js"></script>
+		<script type="text/javascript" src="/static/lib/ui-bootstrap-tpls-0.2.0.js"></script>
+		<script type="text/javascript" src="/static/lib/sylvester.js"></script>
+		<script type="text/javascript" src="/static/js/saffron.js"></script>
+		<script type="text/javascript" src="/static/js/functional.js"></script>
+		<script type="text/javascript" src="/static/js/math.js"></script>
+		<script type="text/javascript" src="/static/js/model.js"></script>
+		<script type="text/javascript" src="/static/js/chart.js"></script>
+		<script type="text/javascript" src="/static/js/editor.js"></script>
+		<script type="text/javascript" src="/static/js/editor.constraints.js"></script>
+		<script type="text/javascript" src="/static/js/editor.progression.js"></script>
+		<script type="text/javascript" src="/static/js/app.editor.js"></script>
+		{% for url in game.jsincludes -%}
+		<script type="text/javascript" src="/static/{{url}}"></script>
+		{%- endfor %}
+		<script type="text/javascript">
+			var saffron_gname = "{{game.id}}";
+			var saffron_app = {{game.jsapp}};
+		</script>
+	</head>	
+	{% raw %}
+	<body ng-controller="ProgressionCtrl">
+		<!--<h1>Progression Generation Tool</h1>-->
+		<button class="btn" ng-click="change_layout()">Change Layout</button>
+		<tabs>
+
+			<pane heading="{{ panes['progedit'].title }}" active="panes['progedit'].active">
+				<div class="saffron_pane">
+					<div ng-class="'saffron_prog_editor_' + layout">
+						<h2>Progression Plan</h2>
+						<div ng-include src="'/static/partial/planedit.html'"></div>
+					</div>
+					<div ng-class="'saffron_prog_cons_' + layout">
+						<h2>Progression Constraints</h2>
+						<div ng-include src="'/static/partial/constraints.html'"></div>
+					</div>
+				</div>
+			</pane>
+
+			<pane heading="{{ panes['gameedit'].title }}" active="panes['gameedit'].active">
+				<div class="saffron_pane">
+					<h2>Level Editor</h2>
+					<div ng-include src="'/static/partial/gameedit.html'"></div>
+				</div>
+			</pane>
+
+			<pane heading="{{ panes['gameplay'].title }}" active="panes['gameplay'].active">
+				<div class="saffron_pane">
+					<div id="game_player_content"></div>
+				</div>
+			</pane>
+
+		</tabs>
+	</body>
+	{% endraw %}	
+</html>

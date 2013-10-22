@@ -1,0 +1,178 @@
+
+html {
+	margin: 20px;
+}
+
+h1 {
+	text-align: center;
+	margin: 0 0 30px 0;
+}
+
+.saffron_error_heading, .saffron_req_list {
+	text-align: left;
+}
+
+.saffron_pane {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+}
+
+.saffron_pane svg {
+	display: block;
+	margin: 0 auto;
+}
+
+.button_row {
+	margin: 0 0 10px 0;
+}
+
+.saffron_pane span, .saffron_pane p {
+	margin: 10px;
+}
+
+span.saffron_ui_prefix_label {
+	margin-right: 0px;
+}
+
+/* center the tabs */
+.nav-tabs > li, .nav-pills > li {
+	float:none;
+	display:inline-block;
+}
+
+.nav-tabs, .nav-pills {
+	text-align:center;
+}
+
+/* fix twitter's silly select margin */
+select, input[type="number"] {
+	margin-bottom: 0;
+	width: auto;
+}
+
+input[type="number"] {
+	width: 50px;
+}
+
+.saffron_prog_editor_h {
+}
+
+.saffron_prog_cons_h {
+}
+
+.saffron_prog_editor_h {
+	float: left;
+	width: 50%;
+}
+
+.saffron_prog_cons_h {
+	float: right;
+	width: 50%;
+}
+
+.saffron_draw_row > rect {
+	stroke: black;
+}
+
+rect.saffron_error_rect {
+	stroke-width: 3;
+	stroke: #bb2222;
+}
+
+.saffron_draw_row_editable {
+	cursor: pointer;
+}
+
+.saffron_draw_e_manual {
+	fill: #328BC4;
+}
+
+.saffron_draw_e_manual_new {
+	fill: #FFA636;
+}
+
+.saffron_draw_e_automatic {
+	fill: #63B0E1;
+}
+
+.saffron_draw_e_locked {
+	fill: #0A456C;
+	cursor: default;
+}
+
+.saffron_draw_e_locked_new {
+	fill: #8C530B;
+	cursor: default;
+}
+
+.saffron_draw_e_open {
+	fill: #c4c4c4;
+}
+
+.saffron_draw_e_disabled {
+	fill: #6c6c6c;
+	cursor: default;
+}
+
+.saffron_draw_e_manual_err {
+	fill: #bb2222;
+}
+
+.saffron_draw_e_automatic_err {
+	fill: #e14e4e;
+}
+
+.saffron_draw_horz_rule, .saffron_draw_vert_rule {
+	stroke: black;
+}
+
+.saffron_draw_x_axis path,
+.saffron_draw_x_axis line,
+.saffron_draw_y_axis path,
+.saffron_draw_y_axis line {
+	fill: none;
+	stroke: black;
+	shape-rendering: crispEdges;
+}
+
+.saffron_drag_circle {
+	fill: black;
+	fill-opacity: 0;
+	stroke: black;
+	stroke-width: 4;
+	cursor: move;
+}
+
+.saffron_spline_curve {
+	stroke: #328BC4;
+	stroke-width: 6;
+	fill: none;
+}
+
+.saffron_progression_count_bar {
+	fill: #c4c4c4;
+	stroke: black;
+}
+
+.saffron_progression_count_bar_overload {
+	fill: #bb2222;
+	stroke: black;
+}
+
+.saffron_axis_label {
+	font-weight: bold;
+	font-size: 120%;
+}
+
+.saffron_level_window {
+	border-style: solid;
+	border-width: 5px;
+	display: inline-block;
+}
+
+.saffron_overload_bar {
+	stroke: #328BC4;
+	stroke-dasharray: 10,5;
+}
+

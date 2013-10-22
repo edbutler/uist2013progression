@@ -1,0 +1,46 @@
+
+<accordion close-others="false">
+
+	<accordion-group>
+		<accordion-heading>Concept Introduction Rate</accordion-heading>
+		<svg new-concept-rate></svg>
+	</accordion-group>
+
+	<accordion-group ng-repeat="type in constraints.intensity().types()">
+		<accordion-heading>Concept Count</accordion-heading>
+		<svg level-intensity csetllist="cset_and_llist" progression="progression" curve="constraints.intensity().curves()[type.id]"></svg>
+	</accordion-group>
+
+	<!--
+	<accordion-group>
+		<accordion-heading><error-checker errorfn="get_count_error" title="Concepts"></error-checker></accordion-heading>
+		<accordion close-others="false">
+			<accordion-group ng-repeat="c in concepts.concepts()">
+				<accordion-heading>{{c.name}}</accordion-heading>
+				<span>Min Intro: <input type="number" min="0" max="{{lids().length -1}}" ng-model="constraints.introduction()[c.id].minintro"></span>
+				<span>Max Intro: <input type="number" min="{{constraints.introduction()[c.id].minintro}}" max="{{lids().length -1}}" ng-model="constraints.introduction()[c.id].maxintro"></span>
+				<span>Dwell: <input type="number" min="0" max="{{lids().length -1}}" ng-model="constraints.introduction()[c.id].dwell"></span>
+				<span>Combo: <input type="number" min="0" max="10" ng-model="constraints.introduction()[c.id].combo"></span>
+			</accordion-group>
+		</accordion>
+	</accordion-group>
+	-->
+
+	<accordion-group>
+		<accordion-heading>Prerequisites</error-checker></accordion-heading>
+		<div>
+			<p>Click on the cells to toggle whether the column concept is a prereq of the row concept.</p>
+			<svg concept-grid checkfn="does_respect_prereq" anti-symmetric="true" data="constraints.prerequisites()" cset="concepts" progression="progression" label="Prerequisites"></svg>
+		</div>
+	</accordion-group>
+
+	<accordion-group>
+		<accordion-heading>Corequisites</error-checker></accordion-heading>
+		<div>
+			<p>Click on the cells to toggle whether the column concept is a coreq of the row concept.</p>
+			<svg concept-grid checkfn="does_respect_coreq" anti-symmetric="false" data="constraints.corequisites()" cset="concepts" progression="progression" label="Corequisites"></svg>
+		</div>
+	</accordion-group>
+
+</accordion>
+

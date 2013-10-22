@@ -1,0 +1,11 @@
+
+refraction/
+    analyze.lp              Holds a given level fixed and tries to find a violation.
+    concept_analyze.lp      Some rules needed for concept_constraints and analyze to work.
+    concept_config.lp       Configure the generator based on certain concepts.
+    concept_constraints.lp  The __concept constraints for the generator.
+    generate.lp             Creates a level, reasoning over all soutions.
+    levelfile.lp            Transforms an ASP level into a json file usuable in the game.
+    rules.lp                Generic game rules, needed for game simulation.
+    tablegen.lp             Creates a table of fraction math, needed for game simulation.
+
